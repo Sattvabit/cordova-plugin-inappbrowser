@@ -366,6 +366,16 @@ static CDVWKInAppBrowser* instance = nil;
     });
 }
 
+- (void)showNavToolbar:(CDVInvokedUrlCommand*)command
+{
+    [self.inAppBrowserViewController showToolBar:YES :@"bottom"];
+}
+
+- (void)hideNavToolbar:(CDVInvokedUrlCommand*)command
+{
+    [self.inAppBrowserViewController showToolBar:NO :@"bottom"];
+}
+
 - (void)openInCordovaWebView:(NSURL*)url withOptions:(NSString*)options
 {
     NSURLRequest* request = [NSURLRequest requestWithURL:url];

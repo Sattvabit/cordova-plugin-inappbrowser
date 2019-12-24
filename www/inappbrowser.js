@@ -66,6 +66,14 @@
         hide: function (eventname) {
             exec(null, null, 'InAppBrowser', 'hide', []);
         },
+        // iOS only
+        showNavToolbar: function (eventname) {
+            exec(null, null, 'InAppBrowser', 'showNavToolbar', []);
+        },
+        // iOS only
+        hideNavToolbar: function (eventname) {
+            exec(null, null, 'InAppBrowser', 'hideNavToolbar', []);
+        },
         addEventListener: function (eventname, f) {
             if (eventname in this.channels) {
                 this.channels[eventname].subscribe(f);

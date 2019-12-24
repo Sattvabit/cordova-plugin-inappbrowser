@@ -85,6 +85,24 @@
 }
 
 
+- (void)showNavToolbar:(CDVInvokedUrlCommand *)command
+{
+    if(self.usewkwebview){
+        [[CDVWKInAppBrowser getInstance] showNavToolbar:command];
+    }else{
+        [[CDVUIInAppBrowser getInstance] showNavToolbar:command];
+    }
+}
+
+- (void)hideNavToolbar:(CDVInvokedUrlCommand *)command
+{
+    if(self.usewkwebview){
+        [[CDVWKInAppBrowser getInstance] hideNavToolbar:command];
+    }else{
+        [[CDVUIInAppBrowser getInstance] hideNavToolbar:command];
+    }
+}
+
 - (void)injectScriptCode:(CDVInvokedUrlCommand*)command
 {
     if(self.usewkwebview){
