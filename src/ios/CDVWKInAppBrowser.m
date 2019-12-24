@@ -1033,6 +1033,7 @@ BOOL isExiting = FALSE;
             [self setWebViewFrame:webViewBounds];
         } else {
             toolbarFrame.origin.y = (webViewBounds.size.height + LOCATIONBAR_HEIGHT);
+            webViewBounds.size.height -= TOOLBAR_HEIGHT;
         }
         [self setWebViewFrame:webViewBounds];
         
